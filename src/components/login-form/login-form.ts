@@ -4,6 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Account } from '../../models/account/account.interface'
 
 import { LoginResponse } from '../../models/login/login-response.interface';
+import { AuthService } from '../../providers/auth/auth.service';
 
 /**
  * Generated class for the LoginFormComponent component.
@@ -20,7 +21,7 @@ export class LoginFormComponent {
   account = {} as Account;
   @Output() loginStatus: EventEmitter<LoginResponse>;
 
-  constructor(private navCtrl: NavController, private afAuth: AngularFireAuth) {
+  constructor(private navCtrl: NavController, private afAuth: AngularFireAuth, private appAuth: AuthService) {
     this.loginStatus = new EventEmitter<LoginResponse>();
   }
 
@@ -29,19 +30,23 @@ export class LoginFormComponent {
   }
 
   async login() {
-    try {
-      const result: LoginResponse = {
-        result: await this.afAuth.auth.signInWithEmailAndPassword(this.account.email, this.account.password)
-      }
 
-      this.loginStatus.emit(result);
-    } catch (e) {
-      const error: LoginResponse = {
-        error: e
-      }
+    const result = await this.appAuth.signInWithEmailAndPassword(this.account);
+    this.loginStatus.emit(result);
 
-      this.loginStatus.emit(error);
-    }
+    // try {
+    //   const result: LoginResponse = {
+    //     result: await this.afAuth.auth.signInWithEmailAndPassword(this.account.email, this.account.password)
+    //   }
+
+    //   this.loginStatus.emit(result);
+    // } catch (e) {
+    //   const error: LoginResponse = {
+    //     error: e
+    //   }
+
+    //   this.loginStatus.emit(error);
+    // }
   }
 
   // navigateToPage(pageName: string, isRoot: boolean) {

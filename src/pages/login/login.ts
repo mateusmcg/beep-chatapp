@@ -20,7 +20,7 @@ export class LoginPage {
 
   login(event: LoginResponse) {
     if (!event.error) {
-      this.navCtrl.setRoot("ProfilePage");
+      this.navCtrl.setRoot("TabsPage");
       this.toast.create({
         message: `Welcome to Beep, ${event.result.email}`,
         duration: 3000
