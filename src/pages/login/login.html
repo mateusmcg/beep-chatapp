@@ -8,21 +8,5 @@
 
   <img id="logo" src="assets/img/logo.png" alt="Logo">
 
-  <ion-card>
-    <ion-card-content>
-      <ion-item>
-        <ion-label floating>E-mail Address</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Password</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-    </ion-card-content>
-    <ion-row>
-      <button ion-button (click)="navigateToPage('RegisterPage')" color="secondary">Register</button>
-      <button ion-button (click)="navigateToPage('TabsPage', true)">Login</button>
-    </ion-row>
-  </ion-card>
-
+  <app-login-form></app-login-form>
 </ion-content>

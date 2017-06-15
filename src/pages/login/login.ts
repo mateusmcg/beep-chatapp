@@ -17,12 +17,4 @@ export class LoginPage {
   constructor(private navCtrl: NavController, private navParams: NavParams) {
   }
 
-  navigateToPage(pageName: string, isRoot: boolean) {
-    if (isRoot) {
-      this.navCtrl.setRoot(pageName);
-    } else {
-      this.navCtrl.push(pageName);
-    }
-  }
-
 }
