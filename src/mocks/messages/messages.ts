@@ -1,5 +1,5 @@
-import { Message } from '../../models/messages/message';
-import { User } from '../../models/users/user';
+import { Message } from '../../models/messages/message.interface';
+import { User } from '../../models/users/user.interface';
 
 import { USER_LIST } from '../users/user';
 
