@@ -1,7 +1,7 @@
 import { Message } from '../../models/messages/message.interface';
-import { User } from '../../models/users/user.interface';
+import { Profile } from '../../models/profile/profile.interface';
 
-import { USER_LIST } from '../users/user';
+import { USER_LIST } from '../profile/profile';
 
 const userList = USER_LIST;
 const messageList: Message[] = [];

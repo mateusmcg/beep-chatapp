@@ -30,31 +30,8 @@ export class LoginFormComponent {
   }
 
   async login() {
-
     const result = await this.appAuth.signInWithEmailAndPassword(this.account);
     this.loginStatus.emit(result);
-
-    // try {
-    //   const result: LoginResponse = {
-    //     result: await this.afAuth.auth.signInWithEmailAndPassword(this.account.email, this.account.password)
-    //   }
-
-    //   this.loginStatus.emit(result);
-    // } catch (e) {
-    //   const error: LoginResponse = {
-    //     error: e
-    //   }
-
-    //   this.loginStatus.emit(error);
-    // }
   }
-
-  // navigateToPage(pageName: string, isRoot: boolean) {
-  //   if (isRoot) {
-  //     this.navCtrl.setRoot(pageName);
-  //   } else {
-  //     this.navCtrl.push(pageName);
-  //   }
-  // }
 
 }
