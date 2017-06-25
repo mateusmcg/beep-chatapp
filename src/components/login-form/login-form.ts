@@ -34,4 +34,26 @@ export class LoginFormComponent {
     this.loginStatus.emit(result);
   }
 
+  facebookLogin() {
+    this.appAuth.facebookLogin().then(result => {
+      alert('Logado com sucesso! ' + JSON.stringify(result));
+      console.debug(result);
+    }, error => {
+      alert('Erro ao logar com fb! ' + JSON.stringify(error));
+      console.log(error);
+    });;
+  }
+
+  googleLogin() {
+    this.appAuth.googleLogin();
+  }
+
+  facebookLoginPopUp() {
+    this.appAuth.facebookLoginPopUp();
+  }
+
+  googleLoginPopUp() {
+    this.appAuth.googleLoginPopUp();
+  }
+
 }

@@ -13,6 +13,9 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
 import { AuthService } from '../providers/auth/auth.service';
 import { DataService } from '../providers/data/data.service';
 
+import { Facebook } from '@ionic-native/facebook';
+import { GooglePlus } from '@ionic-native/google-plus';
+
 @NgModule({
   declarations: [
     MyApp
@@ -33,7 +36,9 @@ import { DataService } from '../providers/data/data.service';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthService,
-    DataService
+    DataService,
+    Facebook,
+    GooglePlus
   ]
 })
 export class AppModule { }
